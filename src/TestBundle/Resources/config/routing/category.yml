@@ -1,0 +1,4 @@
+category_name:
+    path:     /{name}
+    defaults: { _controller: "TestBundle:Category:category" }
+    

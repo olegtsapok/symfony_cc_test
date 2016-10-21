@@ -1,0 +1,15 @@
+div.categories {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+table.categories, table.products {
+    margin: 0 auto;
+}
+
+div.products {
+    float: right;
+    width: 50%;
+    text-align: center;    
+}

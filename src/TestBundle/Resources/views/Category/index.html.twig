@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body -%}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    
+    <div class="categories" >
+        <h1>Categories list</h1>
+        <table class="records_list categories">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('category_name', { 'name': entity.name }) }}">{{ entity.name }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        
+        
+    {% if (products is defined and products is not empty) %}
+    <div class="products">
+        <h1>Products list for category {{ category.name }}</h1>
+        <table class="records_list products" >
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in products %}
+                <tr>
+                    <td>{{ entity.name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagerfanta">
+            {{ pagerfanta(pagerfanta) }}
+        </div>            
+    </div>
+            
+    {% endif %}
+   
+   
+{% endblock %}
+
+

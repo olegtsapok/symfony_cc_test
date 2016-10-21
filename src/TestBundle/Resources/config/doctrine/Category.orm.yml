@@ -1,0 +1,33 @@
+TestBundle\Entity\Category:
+    type: entity
+    table: categories
+    uniqueConstraints:
+        UNIQ_3AF346685E237E06:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    manyToMany:
+        products:
+            targetEntity: Product
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: categories
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }
